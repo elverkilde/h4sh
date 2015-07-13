@@ -285,6 +285,7 @@ eflag = unlines
 evalCode :: [Char] -> String
 evalCode ty = unlines
   [ " interpreterResult <- runInterpreter $ do"
+  , "     loadModules [\"*H4SH/List.hs\"]"
   , "     setImportsQ context"
   , "     interpret e (as :: "++ty++")"
   , " a <- case interpreterResult of"
