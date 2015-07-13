@@ -82,7 +82,7 @@ executable :: IOMode -> Command -> String
 executable mode (Command _ n _ _ _) = unlines $
   [ "executable:          " ++ n
   , "main-is:             " ++ n ++ ".hs"
-  , "ghc-options:         -O2 -funbox-strict-fields -fglasgow-exts -threaded -dynamic" ]
+  , "ghc-options:         -O2 -funbox-strict-fields -threaded -dynamic" ]
 
 ------------------------------------------------------------------------
 --
@@ -294,7 +294,7 @@ evalCode ty = unlines
 context :: String
 context = unlines
   [ " let context = zip (prehier ++ datas ++ controls ++ misc) (repeat Nothing) ++ qualifieds"
-  , "     prehier = [\"Char\", \"List\", \"Maybe\", \"Numeric\", \"Random\" ]"
+  , "     prehier = [\"Data.Char\", \"Data.List\", \"Data.Maybe\", \"Numeric\", \"System.Random\" ]"
   , "     qualifieds = [(\"Data.Map\", Just \"M\"), (\"Data.Set\", Just \"S\")]"
   , "     datas   = map (\"Data.\" ++) ["
   , "                   \"Bits\", \"Bool\", \"Char\", \"Either\","
