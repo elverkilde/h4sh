@@ -6,10 +6,6 @@ Requirements:
         > make (GNU or BSD)
         > The Glasgow Haskell Compiler
         > Cabal
-        > hs-plugins:
-                darcs get http://www.cse.unsw.edu.au/~dons/code/hs-plugins
-        > fps 0.5:
-                darcs get http://www.cse.unsw.edu.au/~dons/code/fps
 
 Building:
         > PREFIX=/tmp make
